@@ -1,7 +1,7 @@
-int GREEN_LED = 13;
-int RED_LED = 12;
-int TRIG_PIN = 14;
-int ECHO_PIN = 23;
+int GREEN_LED = 12;
+int RED_LED = 14;
+int TRIG_PIN = 13;
+int ECHO_PIN = 15;
 
 int MAX_DISTANCE = 100;
 
