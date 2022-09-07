@@ -63,10 +63,5 @@ void loop() {
     Serial.print("Celsius temperature: ");
     Serial.println(sensors.getTempCByIndex(0)); 
     delay(60);
-
-   tone (RED_LED, 554); // allume le buzzer actif arduino
-   delay(100);
-   tone(RED_LED, 440); // allume le buzzer actif arduino
-   delay(400);
   
 }
