@@ -14,6 +14,7 @@ const char* password = "abi23nafk8fis73czrp8";
 
 const char* host = "srv2.juleslaurent.fr";
 const uint16_t port = 1883;
+const char* client_id = "PROF"
 
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -73,23 +74,20 @@ void switchLed(bool busy) {
   }
 }
 
-void sendMessage(const char* measurement,const char*  fieldName,const char* fieldValue) {
+void sendMessage(char const* measurement,char const* fieldName,char const* fieldValue) {
   if(!client.connected()) {
-    if(client.connect("PROF")) { 
+    if(client.connect(client_id")) { 
       Serial.println("Connected to MQTT broker"); 
     } else { 
       Serial.println("Failed to connect to MQTT broker"); 
     }
   }
 
-  char message[100];
+  char* message;
   sprintf(message, "%s,spot=1 %s=%s",measurement, fieldName, fieldValue);
-       Serial.println("computed"); 
-
+ 
 
   client.publish("parking", message);
-  Serial.println("published"); 
-
 }
 
 void loop() {
