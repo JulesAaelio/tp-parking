@@ -76,14 +76,14 @@ void switchLed(bool busy) {
 
 void sendMessage(char const* measurement,char const* fieldName,char const* fieldValue) {
   if(!client.connected()) {
-    if(client.connect(client_id")) { 
+    if(client.connect(client_id)) { 
       Serial.println("Connected to MQTT broker"); 
     } else { 
       Serial.println("Failed to connect to MQTT broker"); 
     }
   }
 
-  char* message;
+  char message[100];
   sprintf(message, "%s,spot=1 %s=%s",measurement, fieldName, fieldValue);
  
 
