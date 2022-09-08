@@ -19,7 +19,7 @@ const char* password = "abi23nafk8fis73czrp8";
 
 const char* host = "srv2.juleslaurent.fr";
 const uint16_t port = 1883;
-const char* client_id = "PROF"
+const char* client_id = "PROF";
 
 
 // Setup a oneWire instance to communicate with any OneWire devices
@@ -117,12 +117,12 @@ void loop() {
 
     // SPOT TEMPERATURE
     sensors.requestTemperatures();
-    char temp[4];
-    sprintf(temp,"%f",sensors.getTempCByIndex(0));
+    char tempString[4];
+    sprintf(tempString,"%f",sensors.getTempCByIndex(0));
     Serial.print("Celsius temperature: ");
-    Serial.println(temp);
+    Serial.println(tempString);
 
-    sendMessage("temperature","temperature", temp);
+    sendMessage("temperature","temperature", tempString);
     delay(60);
 
 }
