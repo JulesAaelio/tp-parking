@@ -14,7 +14,7 @@ const char* password = "abi23nafk8fis73czrp8";
 
 const char* host = "srv2.juleslaurent.fr";
 const uint16_t port = 1883;
-const char* client_id = "PROF"
+const char* client_id = "PROF";
 
 WiFiClient espClient;
 PubSubClient client(espClient);
