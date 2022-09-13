@@ -1,4 +1,3 @@
-// Import the diagram in wokwi.json on wokwi.json to try out this code. 
 #include <WiFi.h>
 #include <PubSubClient.h>
 #include "DHTesp.h"
@@ -17,8 +16,8 @@ int MAX_DISTANCE = 100;
 float MAX_TEMP = 28.0;
 bool isSpotBusy = false;
 
-const char* ssid     = "2GHZ4_JLT";
-const char* password = "abi23nafk8fis73czrp8";
+const char* ssid     = "Wokwi-GUEST";
+const char* password = "";
 
 const char* host = "srv2.juleslaurent.fr";
 const uint16_t port = 1883;
@@ -55,7 +54,7 @@ void initWifi() {
        would try to act as both a client and an access-point and could cause
        network-issues with your other WiFi-devices on your WiFi-network. */
     WiFi.mode(WIFI_STA);
-WiFi.begin("Wokwi-GUEST", "", 6);
+    WiFi.begin(ssid, password);
 
     while (WiFi.status() != WL_CONNECTED) {
       delay(500);
